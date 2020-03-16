@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>forum</title>
+</head>
+<body>
+<h1>这是论坛页面</h1>
+<a href="/logout">登出</a>
+<h2>{% for title in text %}
+    {{ title }}<br>
+    {% endfor %}
+</h2>
+
+<form action="/forum/" method="post">
+    {% csrf_token %}
+    标题：<input type="text" name="title"><br>
+    类型：<input type="text" name="text_type"><br>
+    内容：<input type="text" name="context"><br>
+    <input type="submit" value="提交">
+</form>
+<h1>{{ now }}</h1>
+</body>
+</html>
